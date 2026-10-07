@@ -24,6 +24,16 @@
 
 ## 获取与安装
 
+推荐打开 [复制给 AI 安装](https://zc6503204-collab.github.io/lugou-case-fact-workbench/#ai-install)，选择当前工具、Codex 或 WorkBuddy.app，复制指令后发送给能够读取网址并操作本机文件的 AI。
+
+也可以直接发送下面这段话：
+
+```text
+请阅读 https://zc6503204-collab.github.io/lugou-case-fact-workbench/install.md，按其中的安装流程，将“律构·案件事实梳理”安装到当前 AI 工具的个人 Skill 目录。只使用本项目的安装资源并核验文件；已有版本先比较，更新前备份并保留本机配置。完成后检查 Skill 入口和运行支持，告诉我安装结果及还缺哪些依赖。
+```
+
+安装助手只安装固定 v0.3 的 Skill 文件并核验下载包；相同文件不重复写入，更新前备份将被覆盖的文件，保留本机配置与新增文件。运行依赖另行检查。详见 [AI 安装说明](docs/install.md) 和 [安装清单](docs/install-manifest.json)。
+
 | 平台 / 内容 | 下载 | 安装位置 |
 | --- | --- | --- |
 | Codex | [v0.3 安装包](docs/downloads/codex-lugou-v0.3.zip) | `~/.codex/skills/case-fact-structuring/` |
@@ -93,6 +103,7 @@ case-fact-structuring/   业务规则、统一数据模板、提取及导出脚�
 docs/                   宣传首页、演示导览、使用页与虚构成果
 tests/                  网页逻辑检查
 tools/                  宣传页生成、公开发布检查
+                        AI 安装助手与安装指引生成
 NOTICE.md               使用授权
 TESTING.md              验证范围与未完成项
 PROMOTION.md             可复用的项目介绍与分享文案
@@ -103,4 +114,3 @@ PROMOTION.md             可复用的项目介绍与分享文案
 ## 使用授权
 
 © 2026 律构。保留权利。项目当前**未附开源许可证**，公开源代码供展示与评估，其他使用授权请联系维护者。第三方依赖和模型遵循各自授权。详见 [NOTICE.md](NOTICE.md)。
-

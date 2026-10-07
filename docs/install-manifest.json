@@ -1,0 +1,43 @@
+{
+  "project": "律构·案件事实梳理",
+  "skill_name": "case-fact-structuring",
+  "version": "v0.3",
+  "repository": "https://github.com/zc6503204-collab/lugou-case-fact-workbench",
+  "ref": "v0.3",
+  "skill_path": "case-fact-structuring",
+  "installer": {
+    "url": "https://zc6503204-collab.github.io/lugou-case-fact-workbench/install_skill.py",
+    "sha256": "327e8481153dee4ce7e01c1b00558a88fdc346490ba87f758fb3bbb8fdec9585"
+  },
+  "packages": {
+    "codex": {
+      "url": "https://zc6503204-collab.github.io/lugou-case-fact-workbench/downloads/codex-lugou-v0.3.zip",
+      "sha256": "580e1b0139ab1cc6c53ac200680bb24ccdb1e47ce404d5edfeed8bc95618248d"
+    },
+    "workbuddy": {
+      "url": "https://zc6503204-collab.github.io/lugou-case-fact-workbench/downloads/workbuddy-lugou-v0.3.zip",
+      "sha256": "580e1b0139ab1cc6c53ac200680bb24ccdb1e47ce404d5edfeed8bc95618248d"
+    }
+  },
+  "files": {
+    "SKILL.md": "1970b0081373102251dc6d3cf4fa318106034c46b0aa6c1c87651e24194b64d5",
+    "agents/openai.yaml": "8396f707310d958d839449e41310cc89c548799b10c2450503ac25f42e7bf46e",
+    "assets/case.template.json": "cbe2f01e543bace7b47c689ecf688bce2fa26ea16424aaa58b80548410024b98",
+    "assets/workpaper.html": "968f8128d0b3116fd466ca8ea3c83ded9bc4d30d0447823db806ee985125bd93",
+    "references/data-format.md": "5d1c78cf7e90d1d16bd2a5e51a7d771cdcd938b1f39026899c11d73bc384cd58",
+    "references/evaluation.md": "51ed0194bc0171558c85dab8f0be5e269e778678e3866a010e8589854c2487a2",
+    "references/fact-rules.md": "b3dd0e6d7fa642127f001093ada9bbbcba650adfed40db44a9d960b3f2550912",
+    "references/platforms.md": "851d213a2a480d82d6aba924c6d95c8717f40dabd1a9dffd386d1c612d24ae91",
+    "references/runtime.md": "d1841c8fbe630f883af148e0354e818bc54658bcc01b883227d76f5351ebe6cb",
+    "references/visual-system.md": "0b1d46a554c4f58d06329fbbde4b39715e10e99ebd75b4bd4aa37bb837482cd5",
+    "runtime.example.json": "1ad17e817661ec998317ad4fea21e7fb9b7e1b7cd769f9a62e706b2b109bb1b4",
+    "scripts/add_xlsx_links.py": "b2b58dc3309f3366fe1958168d5f61d678b9cb9647b60deece6337bfc70445ed",
+    "scripts/build_xlsx.mjs": "b1e75414669db9419fecb917fb4b71196e4e639aafb3c7932c3ef6b88ac08046",
+    "scripts/casework.py": "32abb7fc2ea9fedbde475572ed748b7f393412818eec4184c656bdf86098d7f9",
+    "scripts/macos_ocr.swift": "00a31e941ca108ad3d62cd0584da8e1b10b441ae600ea771a9f82c4707f9f7e1",
+    "scripts/requirements-asr.txt": "7a7a166723b6101ef442d5656dc2667768e3effcd5c33a6c725ab4a5f9398a51",
+    "scripts/transcribe.py": "2b81e8a2498f7f96fd3b30b69e72aa1b1e1fae387db5c37028257bae53897b01"
+  },
+  "runtime_baseline": "Apple Silicon Mac; skill files installed separately from runtime dependencies",
+  "notice": "https://github.com/zc6503204-collab/lugou-case-fact-workbench/blob/main/NOTICE.md"
+}

@@ -8,6 +8,16 @@ DOCS = ROOT / 'docs'
 REPO = 'https://github.com/zc6503204-collab/lugou-case-fact-workbench'
 SITE = 'https://zc6503204-collab.github.io/lugou-case-fact-workbench/'
 
+def ai_install(identifier):
+    destinations = {'auto':'当前 AI 工具的个人 Skill 目录（Codex 或 WorkBuddy.app）',
+                    'codex':'Codex 的个人 Skill 目录', 'workbuddy':'WorkBuddy.app 的个人 Skill 目录'}
+    def instruction(platform):
+        return (f'请阅读 {SITE}install.md，按其中的安装流程，将“律构·案件事实梳理”安装到{destinations[platform]}。'
+                '只使用该项目的安装资源并核验文件；已有版本先比较，更新前备份并保留本机配置。'
+                '完成后检查 Skill 入口和运行支持，告诉我安装结果及还缺哪些依赖。')
+    alternatives=''.join(f'<span hidden id="{identifier}-{key}">{escape(instruction(key))}</span>' for key in destinations)
+    return f'''<section class="section" id="ai-install"><div class="ai-install panel"><div class="install-intro"><p class="eyebrow">交给 AI 安装</p><h2>复制一次，<br>让 AI 帮你装好。</h2><p class="muted">选择你使用的工具，复制右侧指令，发给能读取网址、操作本机文件的 AI。</p><ol class="install-steps"><li>复制安装指令</li><li>粘贴到 AI 对话</li><li>查看安装核验结果</li></ol><a href="install.md">查看本项目安装说明 →</a></div><div class="install-content"><div class="install-choice"><label for="{identifier}-platform">安装到</label><select id="{identifier}-platform" data-install-select="{identifier}"><option value="auto">当前工具 · 自动识别</option><option value="codex">Codex</option><option value="workbuddy">WorkBuddy.app</option></select><span class="pill">本项目官方资源</span></div><pre class="code install-command" id="{identifier}">{escape(instruction('auto'))}</pre>{alternatives}<div class="install-actions"><button class="button primary" type="button" data-copy="{identifier}">复制给 AI 安装</button><span class="copy-status" role="status" aria-live="polite"></span></div><p class="hero-note">安装文件后会检查运行支持。缺少依赖时，AI 应列出需要配置的项目。</p></div></div></section>'''
+
 def page(filename, title, description, content):
     nav = [('index.html', '项目介绍'), ('demo.html', '虚构演示'), ('guide.html', '获取与使用')]
     links = ''.join(f'<a href="{href}"'+(' aria-current="page"' if filename == href else '')+f'>{label}</a>' for href,label in nav)
@@ -29,7 +39,7 @@ page('index.html', '把案卷整理成有出处的事实底稿',
      '律构·案件事实梳理：供 Codex 与 WorkBuddy 使用的事实整理 Skill。Excel 人工复核、网页回查来源、增量更新，公开提供虚构案卷演示。', '''
 <section class="hero wrap"><div class="hero-grid"><div><p class="eyebrow">律构 · 案件事实梳理 SKILL / v0.3</p>
 <h1>把零散案卷，整理成<br><span>有出处的事实底稿。</span></h1><p class="lead">从合同、流水到聊天与录音，把时间、主体、金额和关键原话放到同一张工作台。每条事实保留出处，每处分歧留给律师复核。</p>
-<div class="buttons"><a class="button primary" href="demo.html">查看虚构演示 →</a><a class="button" href="guide.html">获取 Skill</a></div><p class="hero-note">Excel 做复核 · 网页做回查 · 两平台共用一套规则</p></div>
+<div class="buttons"><a class="button primary" href="demo.html">查看虚构演示 →</a><a class="button" href="#ai-install">让 AI 帮我安装</a></div><p class="hero-note">Excel 做复核 · 网页做回查 · 两平台共用一套规则</p></div>
 <div class="visual" aria-label="虚构案卷结构示意，非界面截图"><div class="visual-head"><strong>股权投资与回购 · 虚构演示</strong><span class="pill">来源可回查</span></div>
 <div class="mini-stats"><div><small>协议约定</small><strong>6,800万</strong><small>两轮投资</small></div><div><small>银行汇入</small><strong>5,600万</strong><small>流水记载</small></div><div><small>一方主张</small><strong>2,680万</strong><small>最新材料版本</small></div></div>
 <div class="mini-event"><time datetime="2024-02-05">2024.02</time><div>第一轮投资协议签署<small>F0007 · 正本与草案并列回查</small></div></div>
@@ -37,6 +47,7 @@ page('index.html', '把案卷整理成有出处的事实底稿',
 <blockquote class="quote">“那50万后面统一处理”<small>F0069 · 保留聊天原话，未推定为确认欠款</small></blockquote>
 <p class="hero-note">结构示意 · 实际工作台可在演示页打开</p></div></div></section>
 <div class="wrap strip"><div><strong>7 个工作表</strong><span>一套完整事实底稿</span></div><div><strong>2 种交付</strong><span>Excel + 离线网页</span></div><div><strong>稳定编号</strong><span>补材料后继续回查</span></div><div><strong>人工复核</strong><span>保留更正、分组与备注</span></div></div>
+<div class="wrap">''' + ai_install('home-ai-command') + '''</div>
 <section class="section wrap" id="features"><div class="section-head"><div><h2>整理得清楚，也查得到原文。</h2><p>把办案中反复做的核对，放进一个可以接续使用的流程。</p></div></div><div class="grid3">
 <article class="feature"><div class="num">01 / 大事记</div><h3>看全案，也看重点</h3><p>按时间或律师填写的整理分组浏览。搜索主体别称、原话、编号和金额，展开事项即可看准确位置与关联问题。</p></article>
 <article class="feature"><div class="num">02 / 来源</div><h3>保留材料说了什么</h3><p>原始记载、当事人陈述和待核推断分别列示。PDF 页码、Word 段落、表格单元格与录音时间各有定位。</p></article>
@@ -73,6 +84,7 @@ page('demo.html', '虚构案卷演示', '用60份虚构材料体验股权投资�
 
 page('guide.html', '获取与使用', '下载 Codex、WorkBuddy 案件事实梳理 Skill，了解 Mac 运行基线、案件材料整理、Excel 复核回导和补充材料更新。', '''
 <div class="wrap"><section class="page-intro"><p class="eyebrow">GET STARTED / 从你的材料开始</p><h1>把一套方法，<br><span>放进日常办案流程。</span></h1><p class="lead">分别提供 Codex 与 WorkBuddy 入口，共用事实整理规则与底稿格式。先下载查看，确认使用授权及运行环境，再从一组材料开始整理。</p></section>
+''' + ai_install('guide-ai-command') + '''
 <section id="install" style="padding-bottom:35px"><div class="duo"><article class="download"><div class="tag">CODEX</div><h2>Codex 安装包</h2><p>解压后，把 case-fact-structuring 文件夹放入个人 Skill 目录，重新加载会话后调用。</p><pre class="code">~/.codex/skills/case-fact-structuring/</pre><div class="buttons"><a class="button primary" href="downloads/codex-lugou-v0.3.zip" download>下载 Codex 包</a><a class="button" href="https://github.com/zc6503204-collab/lugou-case-fact-workbench/tree/main/case-fact-structuring">查看源包</a></div></article><article class="download"><div class="tag">WORKBUDDY.APP</div><h2>WorkBuddy 安装包</h2><p>将包内文件夹放入 WorkBuddy 的 Skill 目录。本包适配 WorkBuddy.app，运行支持需在当前机器配置。</p><pre class="code">~/.workbuddy/skills/case-fact-structuring/</pre><a class="button primary" href="downloads/workbuddy-lugou-v0.3.zip" download>下载 WorkBuddy 包</a></article></div><p class="license-note">© 2026 律构。当前暂未附开源许可证，其他使用授权请通过 <a href="https://github.com/zc6503204-collab/lugou-case-fact-workbench/issues">项目维护者</a>确认。安装包不包含运行库、模型权重或本机配置。</p></section>
 <section class="section" id="workflow"><div class="section-head"><div><h2>第一次整理，只需给出材料和范围。</h2><p>以下提示可以复制后替换路径、案件简称与材料范围。</p></div></div><div class="duo"><article class="panel"><h3>Codex 调用示例</h3><pre class="code" id="prompt-codex">$case-fact-structuring
 请整理我指定的案件材料目录【填写目录】，案件简称【填写简称】。

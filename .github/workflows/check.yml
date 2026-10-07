@@ -16,3 +16,7 @@ jobs:
         run: python3 tools/check_public.py
       - name: Verify workpaper logic and themes
         run: node tests/test_web.mjs
+      - name: Verify installer and install instruction copy
+        run: |
+          python3 -m unittest discover -s tests -p 'test_install.py' -v
+          node tests/test_site.mjs

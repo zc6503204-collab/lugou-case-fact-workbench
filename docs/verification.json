@@ -13,7 +13,8 @@
     "search_pressure_facts": 500,
     "min_colored_theme_contrast": 4.69,
     "audio_timestamp_bounds": "passed, 13 citations; no listening claim",
-    "public_content_scan": "passed"
+    "public_content_scan": "passed",
+    "ai_install": {"installer_tests": 10, "copy_and_selection_assertions": 32, "online_temporary_installations": 2, "installed_file_hashes": "17 files match manifest for each platform", "live_controls": "pending publication check"}
   },
   "deployment": {"status": "verified", "url": "https://zc6503204-collab.github.io/lugou-case-fact-workbench/", "verified_live_files": 13, "remote_bytes_match_local": true},
   "visual_acceptance": {"original_workpaper_desktop": "pending", "original_workpaper_375px": "pending", "original_workpaper_A4": "pending", "new_public_pages": "Desktop 1054px and mobile 375px first-screen or main content inspected; no horizontal overflow; navigation and copy checked. Full-page and A4 acceptance incomplete."},
