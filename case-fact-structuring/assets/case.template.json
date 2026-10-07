@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "case": {
+    "name": "案件简称",
+    "is_demo": false,
+    "scope_note": "事实整理底稿；关键字段和原话仍须回查原件，未作法律定性或证据采信判断。",
+    "updated_at": "填写本次整理时间，含时区",
+    "case_id": null,
+    "revision": 1,
+    "amount_summaries": []
+  },
+  "materials": [],
+  "subjects": [],
+  "facts": [],
+  "citations": [],
+  "issues": [],
+  "changes": []
+}

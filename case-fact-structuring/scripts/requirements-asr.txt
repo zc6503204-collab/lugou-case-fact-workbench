@@ -1,0 +1,4 @@
+# Verified on this Apple Silicon Mac; install only when explicitly requested.
+mlx-whisper==0.4.3
+mlx==0.32.3
+numpy==2.5.3

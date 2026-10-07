@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+*.pyc
+runtime.local.json
+.runtime/
+.env
+.env.*
+node_modules/
+_support/
+tests/*-results.local.json
+verification.local.json
+真实材料/
+私人案卷/

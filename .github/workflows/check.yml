@@ -1,0 +1,18 @@
+name: Public package checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install verification dependencies
+        run: python3 -m pip install -r requirements-dev.txt
+      - name: Verify public pages, provenance and workbook
+        run: python3 tools/check_public.py
+      - name: Verify workpaper logic and themes
+        run: node tests/test_web.mjs

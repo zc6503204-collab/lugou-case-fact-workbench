@@ -1,0 +1,5 @@
+interface:
+  brand_color: "#79603E"
+  display_name: "律构·案件事实梳理 v0.3"
+  short_description: "把案件材料整理成有出处、可复核的 Excel 与网页底稿"
+  default_prompt: "使用 $case-fact-structuring 梳理这些案件材料，生成 Excel 与网页底稿，并保留原文出处、冲突和待核事项。"

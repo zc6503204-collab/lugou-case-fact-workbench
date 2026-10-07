@@ -1,0 +1,8 @@
+{
+  "python": "/absolute/path/to/python3",
+  "node": "/absolute/path/to/node",
+  "node_modules": "/absolute/path/to/node_modules",
+  "asr_python": "/absolute/path/to/dedicated-asr-env/bin/python",
+  "asr_model": "/absolute/path/to/local-mlx-model-with-config-and-weights",
+  "ffmpeg": "/absolute/path/to/ffmpeg"
+}
